@@ -50,7 +50,9 @@ export class Game {
 	initEntities(): void {
 		this.addEntity(new Food(this, this.ctx, this.grid, this.grid, '#2ecc71', 1, 5, null));
 
-		this.addEntity(new Snake(this, this.ctx, 0, 0, this.grid, this.grid));
+		this.addEntity(
+			new Snake(this, this.ctx, this.width / 2, this.height / 2, this.grid, this.grid)
+		);
 	}
 
 	addEntity(entity: IEntity) {

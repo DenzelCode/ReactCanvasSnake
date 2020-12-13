@@ -104,8 +104,8 @@ export class Snake extends Entity {
 
 	addTail(): void {
 		const dir = {
-			x: this.x - this.width * this.tails.length - 1,
-			y: this.y - this.height * this.tails.length - 1,
+			x: this.x - this.width * this.tails.length,
+			y: this.x - this.width * this.tails.length,
 		};
 
 		const movement = this.getMovement();
@@ -173,8 +173,8 @@ export class Snake extends Entity {
 	reset(): void {
 		this.direction = Direction.UNKNOWN;
 		this.speed = 5;
-		this.x = 0;
-		this.y = 0;
+		this.x = this.initialX;
+		this.y = this.initialY;
 		this.addInitialTails();
 		this.update();
 	}
